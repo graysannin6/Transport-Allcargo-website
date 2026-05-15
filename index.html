@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse tire brands and request a custom tire quote by phone, email, WhatsApp, or quote form."
+    />
+    <title>AllCargo Tires | Tire Catalog & Quote Requests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand-mark" href="#top" aria-label="AllCargo Tires home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span>AllCargo Tires</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Page sections">
+        <a href="#brands">Brands</a>
+        <a href="#quote-steps">Quote Steps</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Tire catalog & custom quotes</p>
+          <h1 id="hero-title">Find the Perfect Tires for Your Vehicle</h1>
+          <p class="hero-copy">
+            Browse our available brands, check your tire measurements, and contact
+            us directly for a fast custom quote based on your vehicle's exact
+            width, aspect ratio, and diameter.
+          </p>
+          <div class="hero-actions" aria-label="Quote contact shortcuts">
+            <a class="btn btn-primary" href="#quote-form">Request a Quote</a>
+            <a class="btn btn-secondary" href="tel:+14388272430">Call Us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands-section page-band" id="brands" aria-labelledby="brands-title">
+        <div class="section-heading">
+          <p class="eyebrow">Brands we carry</p>
+          <h2 id="brands-title">Explore Our Tire Catalog</h2>
+          <p>
+            Choose your preferred manufacturer, then send us your measurements for
+            availability and pricing.
+          </p>
+        </div>
+        <div class="brands-grid" id="brands-grid" aria-label="Available tire brands"></div>
+      </section>
+
+      <section class="steps-section page-band" id="quote-steps" aria-labelledby="steps-title">
+        <div class="section-heading">
+          <p class="eyebrow">How to get a quote</p>
+          <h2 id="steps-title">Three Details Are All We Need</h2>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h3>Choose your preferred brand</h3>
+            <p>Select a tire brand from our available catalog list.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h3>Check your measurements</h3>
+            <p>Find the width, aspect ratio, and diameter on your tire sidewall.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h3>Contact us for pricing</h3>
+            <p>Send your brand and measurements for an immediate custom quote.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section page-band" id="contact" aria-labelledby="contact-title">
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <p class="eyebrow">Ready for pricing?</p>
+            <h2 id="contact-title">Request Your Tire Quote</h2>
+            <p>
+              Call, email, message us on WhatsApp, or use the form below to share
+              your tire details. A team member will follow up with a quote tailored
+              to your vehicle.
+            </p>
+
+            <div class="contact-buttons" aria-label="Contact methods">
+              <a class="btn btn-primary" href="tel:+14388272430">Call Us</a>
+              <a class="btn btn-dark" href="mailto:rafaelperedag@gmail.com">Email Us</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/14388272430">WhatsApp Us</a>
+            </div>
+          </div>
+
+          <form
+            class="quote-form"
+            id="quote-form"
+            name="quote-request"
+            method="POST"
+            action="/thank-you.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            aria-label="Quote request form"
+          >
+            <input type="hidden" name="form-name" value="quote-request" />
+            <p class="hidden-field">
+              <label>
+                Do not fill this out if you are human:
+                <input name="bot-field" />
+              </label>
+            </p>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="form-row">
+              <label for="contact-info">Phone or Email</label>
+              <input
+                id="contact-info"
+                name="contact-info"
+                type="text"
+                placeholder="555-123-4567 or you@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="preferred-brand">Preferred Brand</label>
+              <select id="preferred-brand" name="preferred-brand" required>
+                <option value="">Select a brand</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="measurements">Tire Measurements</label>
+              <input
+                id="measurements"
+                name="measurements"
+                type="text"
+                placeholder="Example: 225/65R17"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell us your vehicle model, tire season, or any preferences."
+              ></textarea>
+            </div>
+
+            <button class="btn btn-primary form-submit" type="submit">
+              Submit Quote Request
+            </button>
+            <p class="form-note" id="form-note" aria-live="polite">
+              This form is for quote requests only. No online orders are processed here.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> AllCargo Tires. Catalog and quote requests only.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
